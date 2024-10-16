@@ -1,10 +1,32 @@
-package training.taylor.timetracker.core;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import training.taylor.timetracker.core.dao.TimeEntry;
 
-import java.util.List;
+  package training. Taylor.time-tracker.core;
+  public int size() {
+        return entries.size();
+    }
+
+    public TimeEntry get(int index) {
+        try {
+
+        } catch (Exception e) {
+
+        }
+
+        boolean valid = false;
+
+        if (valid = true) {
+            // whatever
+        }
+
+        return entries.get(index);
+    }
+}
+
+import org. spring framework.beans.factory.annotation.Autowired;
+import org. spring framework. stereotype.Component;
+import training. Taylor. time-tracker.core.dao.TimeEntry;
+
+import java. util.List;
 
 @Component
 public class Tracker {
