@@ -7,6 +7,7 @@
         <groupId>training.taylor.time-tracker</groupId>
         <artifactId>time-tracker-parent</artifactId>
         <version>0.5.0-SNAPSHOT</version>
+        <relativePath>../time-tracker-parent/pom.xml</relativePath> <!-- Ensure this path is correct -->
     </parent>
 
     <artifactId>time-tracker-core</artifactId>
@@ -14,13 +15,14 @@
     <name>Time Tracker (Core)</name>
 
     <properties>
-        <!-- Define versions for dependencies -->
-        <spring.version>5.3.21</spring.version> <!-- Specify the version of Spring you want -->
-        <junit.version>4.13.2</junit.version>   <!-- Specify the version of JUnit you want -->
+        <spring.version>5.3.21</spring.version>
+        <junit.version>4.13.2</junit.version>
+        <maven.compiler.source>1.8</maven.compiler.source>  <!-- Ensure Java 8+ compatibility -->
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencies>
-        <!-- Spring Context Dependency -->
+        <!-- Spring Core Dependency -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -35,7 +37,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Spring Test for Testing -->
+        <!-- Spring Test for Unit Testing -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
@@ -43,4 +45,19 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
